@@ -4,20 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Raxx react</title>
 </head>
 <body>
   <div id="root"></div>
-  <script src="http://unpkg.com/raxx-react"></script>
-  <script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script src="https://unpkg.com/raxx-react"></script>
+	<script type="text/jsx" data-presets="es2016,react">
+		/** @jsx raxxreact.createElement */
 		const root = document.getElementById("root");
 		class App extends raxxreact.Component {
 			render() {
-				return raxxreact.createElement("div", null, "Hello ", this.props.name, "!");
+				return <div>Hello {this.props.name}!</div>;
 			}
 		}
-		const element = raxxreact.createElement(App, {name: "World"});
-		raxxreact.render(element, root);
+		raxxreact.render(<App name="World" />, root);
 	</script>
 </body>
 </html>
