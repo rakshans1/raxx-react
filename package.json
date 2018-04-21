@@ -1,0 +1,57 @@
+{
+  "name": "raxx-react",
+  "version": "1.0.2",
+  "description": "React implementation",
+  "main": "dist/raxx-react.umd.js",
+  "module": "dist/raxx-react.es.js",
+  "author": "Rakshan Shetty <shetty.raxx555@gmail.com> (http://rakshanshetty.in)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakshans1/raxx-react.git"
+  },
+  "scripts": {
+    "test": "ava",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "0.25.0",
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "browser-env": "3.2.5",
+    "npm-run-all": "4.1.2",
+    "rollup": "0.58.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {}
+      ]
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
