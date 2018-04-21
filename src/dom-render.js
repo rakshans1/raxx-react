@@ -116,7 +116,13 @@ function updateDomProperties(dom, prevProps, nextProps) {
 
   // Set attributes
   Object.keys(nextProps).filter(isAttribute).forEach(name => {
-    dom[name] = nextProps[name];
+    if (name === "style") {
+      Object.entries(nextProps[name]).forEach(([key, value]) => {
+        dom.style[key] = value;
+      })
+    } else {
+      dom[name] = nextProps[name];
+    }
   });
 
   // Add event listeners

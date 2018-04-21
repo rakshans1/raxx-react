@@ -1,6 +1,6 @@
 {
   "name": "raxx-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React implementation",
   "main": "dist/raxx-react.umd.js",
   "module": "dist/raxx-react.es.js",
